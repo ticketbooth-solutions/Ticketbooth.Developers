@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-	<id>http://developer.ticketbooth.solutions/</id>
-	<title>Ticketbooth Developer Hub</title>
-	<link rel="self" href="http://developer.ticketbooth.solutions/" />
-	<rights>2020</rights>
-	<updated>2020-02-01T14:52:33Z</updated>
-</feed>
