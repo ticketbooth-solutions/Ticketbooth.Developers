@@ -1,6 +1,6 @@
 # Ticketbooth.Documentation
 
-[![Build Status](https://dev.azure.com/developmomentum/Ticketbooth/_apis/build/status/Docs?branchName=master)](https://dev.azure.com/developmomentum/Ticketbooth/_build/latest?definitionId=17&branchName=master)
+![Build Status](https://dev.azure.com/developmomentum/Ticketbooth/_apis/build/status/Docs?branchName=master)
 ![Netlify](https://img.shields.io/netlify/c03dc389-d69c-4203-bd5f-540f145e2896)
 
 ## Overview
@@ -11,9 +11,12 @@ Documentation and developer tools for the Ticketbooth smart contract. You can vi
 
 ### Ticketbooth.ContractApiFeature
 
+![Build Status](https://dev.azure.com/developmomentum/Ticketbooth/_apis/build/status/Contract%20Api%20Feature?branchName=master)
+
 An extension to the Stratis full node, that registers and bundles only the Ticketbooth API controller. This is for the sole purpose of creating an interactive documentation of the Ticketbooth API.
 
 ### Ticketbooth.TestNode
+![Build Status](https://dev.azure.com/developmomentum/Ticketbooth/_apis/build/status/Test%20Node?branchName=master)
 
 A node specifically for testing the Ticketbooth API.
 
