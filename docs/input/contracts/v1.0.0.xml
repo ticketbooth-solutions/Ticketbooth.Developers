@@ -162,12 +162,12 @@
         </member>
         <member name="F:TicketContract_1_0_0.Show.Time">
             <summary>
-            Unix time of the show
+            Unix time (seconds) of the show
             </summary>
         </member>
         <member name="F:TicketContract_1_0_0.Show.EndOfSale">
             <summary>
-            Block at which the sale ends
+            Block height at which the sale ends
             </summary>
         </member>
         <member name="T:TicketContract_1_0_0.TicketReleaseFee">
