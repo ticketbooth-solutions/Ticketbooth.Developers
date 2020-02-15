@@ -1,8 +1,12 @@
+Title: Getting Started
+Description: How to run the standard node
+Order: 5
+---
 # Running a Full Node
 
 ## Introduction
 
-Ticketbooth smart contracts run on Stratis platform Cirrus blockchain, which is supported by individuals or organisations running their own nodes. Running a full node allows you to interact with the network. There is both a Cirrus main network and a test network and it is important that you interact with the main network **ONLY** through your own node.
+Ticketbooth smart contracts run on Stratis platform Cirrus blockchain, which is supported by individuals or organisations running their own nodes. Running a full node allows you to interact with the network. There is both a Cirrus main network and a test network and it is important that you interact with the main network **ONLY** through a node you trust. It is highly recommended to run your own node.
 
 While it is possible to interact with Ticketbooth smart contracts through a standard Cirrus full node, it is recommended to use the Ticketbooth-enabled full node. This comes with an API extension, which makes it much easier and simpler to interact with Ticketbooth.
 
@@ -20,4 +24,6 @@ Open a shell that you can use to interact with the command line, then navigate t
 
 # Viewing Swagger UI
 
-A Swagger UI is bundled with the full node, allowing you to view documentation and interact with available web API endpoints. These endpoints include Ticketbooth web API, along with other full node features. To view the Swagger UI, simply navigate to [http://localhost:37223/swagger/index.html](http://localhost:37223/swagger/index.html) if running on the main network, or [http://localhost:38223/swagger/index.html](http://localhost:38223/swagger/index.html) for the test network.
+The Ticketbooth full node includes a web API for interacting with the Ticketbooth smart contract. A Swagger UI is bundled with the web API, allowing you to view documentation and interact with available web API endpoints. To view the Swagger UI, simply navigate to [https://localhost:39200/](https://localhost:39200).
+
+You will need to create and fund a wallet to be able to interact with the smart contract, which can be done through the Stratis wallet APIs. If you have any questions on how to do this you can ask in the Stratis platform [Discord](https://discord.gg/9tDyfZs).
