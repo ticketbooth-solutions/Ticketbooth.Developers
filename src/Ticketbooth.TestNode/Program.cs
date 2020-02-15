@@ -59,29 +59,7 @@ namespace Ticketbooth.TestNode
                 .UseSmartContractPoAConsensus()
                 .UseSmartContractPoAMining()
                 .UseSmartContractWallet()
-                //.UseDiagnosticFeature()
                 .AddTicketboothApi();
-
-            //if (nodeSettings.EnableSignalR)
-            //{
-            //    nodeBuilder.AddSignalR(options =>
-            //    {
-            //        options.EventsToHandle = new[]
-            //        {
-            //            (IClientEvent) new BlockConnectedClientEvent(),
-            //            new TransactionReceivedClientEvent()
-            //        };
-
-            //        options.ClientEventBroadcasters = new[]
-            //        {
-            //            (Broadcaster: typeof(WalletInfoBroadcaster),
-            //                ClientEventBroadcasterSettings: new ClientEventBroadcasterSettings
-            //                {
-            //                    BroadcastFrequencySeconds = 5
-            //                })
-            //        };
-            //    });
-            //}
 
             return nodeBuilder.Build();
         }

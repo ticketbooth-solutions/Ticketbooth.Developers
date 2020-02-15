@@ -9,12 +9,6 @@ Documentation and developer tools for the Ticketbooth smart contract. You can vi
 
 ## Projects
 
-### Ticketbooth.ContractApiFeature
-
-![Build Status](https://dev.azure.com/developmomentum/Ticketbooth/_apis/build/status/Contract%20Api%20Feature?branchName=master)
-
-An extension to the Stratis full node, that registers and bundles only the Ticketbooth API controller. This is for the sole purpose of creating an interactive documentation of the Ticketbooth API.
-
 ### Ticketbooth.TestNode
 ![Build Status](https://dev.azure.com/developmomentum/Ticketbooth/_apis/build/status/Test%20Node?branchName=master)
 
