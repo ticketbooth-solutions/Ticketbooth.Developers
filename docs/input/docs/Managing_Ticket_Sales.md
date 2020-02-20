@@ -14,7 +14,7 @@ The maximum number of tickets a Ticketbooth contract can handle is 65, though it
 
 # Setting contract rules
 
-Before running a ticket sale, first set the Ticketbooth rules! The Ticketbooth rules are explained in [this](../ticketbooth_api_basics#ticketbooth-contract-rules) documentation section. You can only set rules when a ticket sale is not active, though they can be changed as many times as needed.
+Before running a ticket sale, first set the Ticketbooth rules! The Ticketbooth rules are explained in [this](/docs/ticketbooth_api_basics#ticketbooth-contract-rules) documentation section. You can only set rules when a ticket sale is not active, though they can be changed as many times as needed.
 
 ## Ticket release fee
 
