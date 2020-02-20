@@ -2,7 +2,7 @@ Title: Getting Started
 Description: How to run the standard node
 Order: 5
 ---
-# Running a Full Node
+# Running a full node
 
 ## Introduction
 

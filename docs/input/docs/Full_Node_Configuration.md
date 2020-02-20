@@ -6,7 +6,7 @@ Order: 10
 
 ## Installation
 
-The Ticketbooth API is created as a full node feature, which means that you can use it with a custom full node configuration. This would, for example, allow you to use the Ticketbooth API with your own custom features, or use it on a seperate network.
+The Ticketbooth API is created as a full node feature, which means that you can use it with a custom full node configuration. This would, for example, allow you to use the Ticketbooth API with your own custom features, or use it on a separate network.
 
 The Ticketbooth API comes as a [NuGet package](https://www.nuget.org/packages/Ticketbooth.Api/). Simply installing this in your project is enough to use the API, although unfortunately there is a little extra setup required to properly configure the Swagger documentation.
 
@@ -44,7 +44,7 @@ You can use the extension method ```IFullNodeBuilder.AddTicketboothApi()``` to i
 
 ## Customisation
 
-The Ticketbooth API can be customised by specifying ```TicketboothApiOptions```. Currently the level of customisation only spans to the port on which to serve the API. By default the port is 39200. There are several ways to set the options, the most common being to set them up in the full node builder extension method.
+The Ticketbooth API can be customised by specifying ```TicketboothApiOptions```. Currently, the level of customisation only spans to the port on which to serve the API. By default the port is 39200. There are several ways to set the options, the most common being to set them up in the full node builder extension method.
 
 ```csharp
 IFullNodeBuilder nodeBuilder = new FullNodeBuilder()
