@@ -1,0 +1,10 @@
+﻿@page
+@model IndexModel
+@inject IOptions<TicketboothApiOptions> _ticketboothApiOptions
+
+<div class="container row">
+    <div class="info">
+
+    </div>
+    <iframe src="https://localhost:@(_ticketboothApiOptions.Value.HttpsPort)/index.html" class="api" frameborder="0"></iframe>
+</div>

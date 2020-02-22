@@ -12,6 +12,7 @@ using Stratis.Sidechains.Networks;
 using System;
 using System.Threading.Tasks;
 using Ticketbooth.Api;
+using Ticketbooth.Demo;
 
 namespace Ticketbooth.TestNode
 {
@@ -59,7 +60,8 @@ namespace Ticketbooth.TestNode
                 .UseSmartContractPoAConsensus()
                 .UseSmartContractPoAMining()
                 .UseSmartContractWallet()
-                .AddTicketboothApi();
+                .AddTicketboothApi()
+                .RunTicketboothDemo();
 
             return nodeBuilder.Build();
         }
