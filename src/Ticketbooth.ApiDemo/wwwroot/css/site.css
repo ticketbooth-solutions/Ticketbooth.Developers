@@ -1,15 +1,21 @@
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     margin: 0;
     overflow: hidden;
+}
+
+html, body, button {
+    font-family: 'Open Sans';
 }
 
 .container {
     position: relative;
     display: flex;
+    height: 100vh;
+}
+
+.center {
     align-items: center;
     justify-content: center;
-    height: 100vh;
 }
 
 .row {
@@ -27,8 +33,13 @@ html, body {
 
 .info {
     width: 300px;
-    padding: 10px 20px;
+    min-width: 300px;
+    background-color: #f7f7f7;
 }
+
+    .info h2 {
+        padding: 0 1em;
+    }
 
     .info ul {
         margin: 0;
@@ -36,6 +47,88 @@ html, body {
         list-style: none;
     }
 
-    .info input {
-        display: inline;
+    .info form {
+        display: grid;
+        align-items: start;
+        grid-template-rows: auto auto;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1em;
     }
+
+    .info form button {
+        grid-column: 2;
+    }
+
+    .info input {
+        padding: .5em;
+        border-radius: 3px;
+        border: 1px dashed #d3d3d3;
+        box-shadow: 0 0 10px 1px rgba(40, 10, 150, 0.01);
+        font-family: 'Open Sans';
+        font-size: 12px;
+    }
+
+.panel {
+    padding: 0 1em;
+}
+
+.form-group {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+form button {
+    padding: 0 1em;
+    justify-self: end;
+}
+
+form button, form .error, .address-list {
+    font-size: .75em;
+}
+
+.address-list {
+    margin: -.5em 0;
+}
+
+.address-list > li {
+    margin: .5em 0;
+}
+
+.address-list strong {
+    display: block;
+}
+
+.address-list span {
+    font-size: 1rem;
+}
+
+dl {
+    display: grid;
+    grid-template-columns: 80px auto;
+}
+
+dt, dd {
+    display: inline;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin-left: 1em;
+}
+
+.error {
+    color: #cb1919;
+}
+
+/* open-sans-regular - latin */
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Open Sans Regular'), local('OpenSans-Regular'), url('../fonts/open-sans-v17-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+    url('../fonts/open-sans-v17-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}

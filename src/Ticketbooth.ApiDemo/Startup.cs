@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using System.Reflection;
+using Ticketbooth.ApiDemo.Services;
+using Ticketbooth.ApiDemo.Services.Background;
 
 namespace Ticketbooth.ApiDemo
 {
@@ -11,6 +13,12 @@ namespace Ticketbooth.ApiDemo
     {
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<WalletService>();
+
+            services.AddSignalR();
+
+            services.AddHostedService<FullNodeMonitor>();
+
             services.AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
@@ -33,6 +41,11 @@ namespace Ticketbooth.ApiDemo
             app.UseStaticFiles(new StaticFileOptions
             {
                 FileProvider = new EmbeddedFileProvider(currentAssembly, $"{currentAssembly.GetName().Name}.wwwroot")
+            });
+
+            app.UseSignalR(builder =>
+            {
+                builder.MapHub<DemoHub>("/demoHub");
             });
 
             app.UseMvc();

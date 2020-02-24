@@ -1,10 +1,56 @@
 ﻿@page
 @model IndexModel
+
 @inject IOptions<TicketboothApiOptions> _ticketboothApiOptions
 
 <div class="container row">
     <div class="info">
-
+        <h2>Wallet</h2>
+        <div class="panel">
+            <form id="wallet-create-form" method="post" hidden>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input asp-for="@Model.CreateWalletDetails.Name" type="text" maxlength="12" required />
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input asp-for="@Model.CreateWalletDetails.Password" type="password" maxlength="24" required />
+                </div>
+                @if (Model.ErrorMessage != null)
+                {
+                    <span class="error">@Model.ErrorMessage</span>
+                }
+                <button type="submit">Create</button>
+            </form>
+            <ul id="wallet-list" hidden>
+            </ul>
+        </div>
     </div>
     <iframe src="https://localhost:@(_ticketboothApiOptions.Value.HttpsPort)/index.html" class="api" frameborder="0"></iframe>
 </div>
+
+@section Scripts {
+    <script src="~/lib/signalr/dist/browser/signalr.min.js"></script>
+    <script type="module" src="~/js/site.js"></script>
+    <script type="module">
+        'use strict';
+        import { Wallets, checkForWallets } from '/js/storage.js';
+
+        async function setDetails() {
+    @if (Model.Wallet != null)
+    {
+            <text>async function storeWalletDetails() {</text>
+                <text>await Wallets.create('@Model.Wallet.Name', '@Model.Wallet.Account', '@Model.Wallet.Password');</text>
+            @foreach(var address in Model.Wallet.Addresses)
+            {
+                <text>await Wallets.addAddress('@Model.Wallet.Name', '@address');</text>
+            }
+            <text>}</text>
+            <text>await storeWalletDetails();</text>
+    }
+            await checkForWallets();
+        }
+
+        setDetails();
+    </script>
+}
