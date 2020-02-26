@@ -8,51 +8,11 @@ if (!('indexedDB' in window)) {
 const dbPromise = openDB("Ticketbooth.Demo", 1,
     {
         upgrade(db) {
-            const contractsStore = db.createObjectStore('Contracts', {
-                keyPath: 'address'
-            });
-
-            contractsStore.createIndex('block', 'block');
-
             db.createObjectStore('Wallets', {
                 keyPath: 'name'
             });
         }
     });
-
-const Contracts = {
-    async add(address, owner, saleActive, block) {
-        return (await dbPromise).add('Contracts', {
-            address,
-            owner,
-            saleActive,
-            block
-        });
-    },
-    async setSaleActive(address) {
-        const db = await dbPromise;
-        let contract = await db.get('Contracts', address);
-        return (await dbPromise).put('Contracts', {
-            address,
-            owner: contract.owner,
-            saleActive: true,
-            block: contract.block
-        });
-    },
-    async setSaleInactive(address) {
-        const db = await dbPromise;
-        let contract = await db.get('Contracts', address);
-        return (await dbPromise).put('Contracts', {
-            address,
-            owner: contract.owner,
-            saleActive: false,
-            block: contract.block
-        });
-    },
-    async all() {
-        return (await dbPromise).getAllFromIndex('Contracts', 'block');
-    }
-};
 
 export const Wallets = {
     async create(walletName, accountName, password) {
@@ -216,25 +176,3 @@ function formatTokenBalance(input) {
 
     return parts[0].concat('.', fractional, ' CRS');
 }
-
-async function fillUserContracts() {
-    const contracts = await Contracts.all();
-    const userContractList = document.getElementById('user-contracts');
-    for (const userContract of contracts) {
-        const userContractItem = document.createElement('li');
-
-        const contractAddressItem = document.createElement('strong');
-        contractAddressItem.innerText = userContract.address;
-        const contractStateItem = document.createElement('span');
-        const contractStateValue = userContract.saleActive ? 'Active' : 'Inactive';
-        contractStateItem.innerText = contractStateValue;
-        contractStateItem.classList.add(contractStateValue.toLowerCase());
-
-        userContractItem.appendChild(contractAddressItem);
-        userContractItem.appendChild(contractStateItem);
-
-        userContractList.appendChild(userContractItem);
-    }
-}
-
-fillUserContracts();

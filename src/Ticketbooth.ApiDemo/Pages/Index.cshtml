@@ -25,6 +25,18 @@
             <ul id="wallet-list" hidden>
             </ul>
         </div>
+        <h2>Transaction Lookup</h2>
+        <div class="panel column">
+            <div class="form-group">
+                <label for="trx-hash-input">Hash</label>
+                <input id="trx-hash-input" type="text" maxlength="64" />
+            </div>
+            <button type="button" onclick="actions.beginSearchTransaction()">Search</button>
+            <div class="trx-result">
+                <pre id="trx-response"><code>{}</code></pre>
+                <div id="trx-spinner" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+            </div>
+        </div>
     </div>
     <iframe src="https://localhost:@(_ticketboothApiOptions.Value.HttpsPort)/index.html" class="api" frameborder="0"></iframe>
 </div>
