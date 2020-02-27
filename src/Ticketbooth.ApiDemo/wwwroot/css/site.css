@@ -116,6 +116,7 @@ html, body, button {
 
     .panel > * {
         margin: .5em 0;
+        float: left;
     }
 
 .form-group {

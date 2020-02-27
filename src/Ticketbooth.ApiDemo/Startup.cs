@@ -13,7 +13,7 @@ namespace Ticketbooth.ApiDemo
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<WalletService>();
+            services.AddSingleton<IWalletService, WalletService>();
 
             services.AddSignalR();
 

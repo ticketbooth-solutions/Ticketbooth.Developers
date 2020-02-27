@@ -12,7 +12,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Stratis.Bitcoin" Version="3.0.5" />
-    <PackageReference Include="Ticketbooth.Api" Version="1.0.0-rc1" />
+    <PackageReference Include="Ticketbooth.Api" Version="1.0.0-rc2" />
   </ItemGroup>
 
   <ItemGroup>

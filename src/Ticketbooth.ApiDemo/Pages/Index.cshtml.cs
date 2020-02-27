@@ -6,9 +6,9 @@ namespace Ticketbooth.ApiDemo.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly WalletService _walletService;
+        private readonly IWalletService _walletService;
 
-        public IndexModel(WalletService walletService)
+        public IndexModel(IWalletService walletService)
         {
             _walletService = walletService;
         }
