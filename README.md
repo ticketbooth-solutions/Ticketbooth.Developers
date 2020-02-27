@@ -1,4 +1,4 @@
-# Ticketbooth.Documentation
+# Ticketbooth.Developers
 
 ![Build Status](https://dev.azure.com/developmomentum/Ticketbooth/_apis/build/status/Docs?branchName=master)
 ![Netlify](https://img.shields.io/netlify/c03dc389-d69c-4203-bd5f-540f145e2896)
@@ -9,17 +9,17 @@ Documentation and developer tools for the Ticketbooth smart contract. You can vi
 
 ## Projects
 
-### Ticketbooth.ApiDemo
+### Ticketbooth.Demo
 
 Runs the Ticketbooth API demo, which embeds the Swagger UI into a web app that contains tools to demonstrate the API.
 
-### Ticketbooth.TestNode
+### Ticketbooth.Demo.Node
 ![Build Status](https://dev.azure.com/developmomentum/Ticketbooth/_apis/build/status/Test%20Node?branchName=master)
 
 A node specifically for running the Ticketbooth API demo.
 
 ## Resources
 
-* [Open issues](https://github.com/ticketbooth-solutions/Ticketbooth.Documentation/issues)
-* [Contributing guide](https://github.com/ticketbooth-solutions/Ticketbooth.Documentation/blob/master/CONTRIBUTING.md)
-* [Code of conduct](https://github.com/ticketbooth-solutions/Ticketbooth.Documentation/blob/master/CODE_OF_CONDUCT.md)
+* [Open issues](https://github.com/ticketbooth-solutions/Ticketbooth.Developers/issues)
+* [Contributing guide](https://github.com/ticketbooth-solutions/Ticketbooth.Developers/blob/master/CONTRIBUTING.md)
+* [Code of conduct](https://github.com/ticketbooth-solutions/Ticketbooth.Developers/blob/master/CODE_OF_CONDUCT.md)

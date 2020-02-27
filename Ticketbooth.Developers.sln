@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketbooth.TestNode", "src\Ticketbooth.TestNode\Ticketbooth.TestNode.csproj", "{6AC00E9C-518D-4EAB-9611-33514FF9B895}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketbooth.Demo.Node", "src\Ticketbooth.Demo.Node\Ticketbooth.Demo.Node.csproj", "{6AC00E9C-518D-4EAB-9611-33514FF9B895}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketbooth.ApiDemo", "src\Ticketbooth.ApiDemo\Ticketbooth.ApiDemo.csproj", "{31638667-48CA-425F-8DEB-5D1B5E215028}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketbooth.Demo", "src\Ticketbooth.Demo\Ticketbooth.Demo.csproj", "{31638667-48CA-425F-8DEB-5D1B5E215028}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticketbooth.ApiDemo.Tests", "test\Ticketbooth.ApiDemo.Tests\Ticketbooth.ApiDemo.Tests.csproj", "{B1125F72-4470-42C7-97C1-AED00E4F9CB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketbooth.Demo.Tests", "test\Ticketbooth.Demo.Tests\Ticketbooth.Demo.Tests.csproj", "{B1125F72-4470-42C7-97C1-AED00E4F9CB9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

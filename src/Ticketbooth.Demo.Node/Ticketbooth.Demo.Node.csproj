@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ticketbooth.ApiDemo\Ticketbooth.ApiDemo.csproj" />
+    <ProjectReference Include="..\Ticketbooth.Demo\Ticketbooth.Demo.csproj" />
   </ItemGroup>
 
 

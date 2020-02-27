@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Ticketbooth.ApiDemo\Ticketbooth.ApiDemo.csproj" />
+    <ProjectReference Include="..\..\src\Ticketbooth.Demo\Ticketbooth.Demo.csproj" />
   </ItemGroup>
 
 </Project>

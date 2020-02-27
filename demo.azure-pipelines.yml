@@ -11,8 +11,8 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  srcProject: 'src/Ticketbooth.TestNode/Ticketbooth.TestNode.csproj'
-  testProject: 'test/Ticketbooth.ApiDemo.Tests/Ticketbooth.ApiDemo.Tests.csproj'
+  srcProject: 'src/Ticketbooth.Demo.Node/Ticketbooth.Demo.Node.csproj'
+  testProject: 'test/Ticketbooth.Demo.Tests/Ticketbooth.Demo.Tests.csproj'
 
 steps:
 
