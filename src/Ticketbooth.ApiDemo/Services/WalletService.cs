@@ -9,7 +9,7 @@ using Ticketbooth.ApiDemo.Models;
 
 namespace Ticketbooth.ApiDemo.Services
 {
-    public class WalletService
+    public class WalletService : IWalletService
     {
         private readonly IDateTimeProvider _dateTimeProvider;
         private readonly ILogger<WalletService> _logger;

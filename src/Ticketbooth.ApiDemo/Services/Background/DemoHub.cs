@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.SignalR;
+using Microsoft.Extensions.Logging;
 using NBitcoin;
 using Stratis.Bitcoin.Features.SmartContracts.Models;
 using Stratis.SmartContracts.Core.Receipts;
@@ -12,15 +13,17 @@ namespace Ticketbooth.ApiDemo.Services.Background
 {
     public class DemoHub : Hub
     {
+        private readonly ILogger<DemoHub> _logger;
         private readonly IReceiptRepository _receiptRepository;
+        private readonly IWalletService _walletService;
         private readonly Network _network;
-        private readonly WalletService _walletService;
 
-        public DemoHub(IReceiptRepository receiptRepository, Network network, WalletService walletService)
+        public DemoHub(ILoggerFactory loggerFactory, IReceiptRepository receiptRepository, IWalletService walletService, Network network)
         {
+            _logger = loggerFactory.CreateLogger<DemoHub>();
             _receiptRepository = receiptRepository;
-            _network = network;
             _walletService = walletService;
+            _network = network;
         }
 
         public Task<AddressDetails[]> UpdateBalances(string[] addresses)
@@ -48,11 +51,12 @@ namespace Ticketbooth.ApiDemo.Services.Background
                     receipt = _receiptRepository.Retrieve(hashValue);
                 }
             }
-            catch (FormatException)
+            catch (FormatException e)
             {
+                _logger.LogWarning(e.Message);
             }
 
-            var response = new ReceiptResponse(receipt, _network);
+            var response = receipt != null ? new ReceiptResponse(receipt, _network) : null;
             return Task.FromResult(response);
         }
     }
