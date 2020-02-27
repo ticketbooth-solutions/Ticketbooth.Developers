@@ -12,6 +12,7 @@ pool:
 variables:
   buildConfiguration: 'Release'
   srcProject: 'src/Ticketbooth.TestNode/Ticketbooth.TestNode.csproj'
+  testProject: 'test/Ticketbooth.ApiDemo.Tests/Ticketbooth.ApiDemo.Tests.csproj'
 
 steps:
 
@@ -19,11 +20,22 @@ steps:
   displayName: Restore
   inputs:
     command: 'restore'
-    projects: $(srcProject)
+    projects: |
+      $(srcProject)
+      $(testProject)
     feedsToUse: 'select'
 
 - task: DotNetCoreCLI@2
   displayName: Build
   inputs:
     command: 'build'
-    projects: $(srcProject)
+    projects: |
+      $(srcProject)
+      $(testProject)
+
+- task: DotNetCoreCLI@2
+  displayName: Test
+  inputs:
+    command: 'test'
+    projects: $(testProject)
+    testRunTitle: 'Demo Tests'
