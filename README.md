@@ -14,7 +14,7 @@ Documentation and developer tools for the Ticketbooth smart contract. You can vi
 Runs the Ticketbooth API demo, which embeds the Swagger UI into a web app that contains tools to demonstrate the API.
 
 ### Ticketbooth.Demo.Node
-![Build Status](https://dev.azure.com/developmomentum/Ticketbooth/_apis/build/status/Test%20Node?branchName=master)
+![Build Status](https://dev.azure.com/developmomentum/Ticketbooth/_apis/build/status/Demo?branchName=master)
 
 A node specifically for running the Ticketbooth API demo.
 
