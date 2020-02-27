@@ -105,20 +105,17 @@ document.addEventListener('DOMContentLoaded', function () {
 // accordions
 var accordions = document.getElementsByClassName("accordion");
 for (var i = 0; i < accordions.length; i++) {
-    accordions[i].onclick = function () {
-        this.classList.toggle('is-open');
+    const accordion = accordions[i];
+    accordion.firstElementChild.onclick = function () {
+        var panel = this.nextElementSibling;
 
-        var content = this.nextElementSibling;
-        if (content.style.maxHeight !== "0px") {
-            // close
-            content.style.transition = "none";
-            content.style.margin = "0";
-            content.style.maxHeight = "0px";
-        } else {
+        const opened = accordion.classList.toggle('is-open');
+        if (opened) {
             // open
-            content.style.transition = "max-height 0.2s ease-in-out";
-            content.style.margin = "1em 0";
-            content.style.maxHeight = content.scrollHeight + "px";
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        } else {
+            // close
+            panel.style.maxHeight = null;
         }
     };
 }

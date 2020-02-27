@@ -43,7 +43,6 @@ html, body, button {
     }
 
     .info ul {
-        margin: 0;
         padding: 0;
         list-style: none;
     }
@@ -56,9 +55,9 @@ html, body, button {
         grid-column-gap: 1em;
     }
 
-    .info form button {
-        grid-column: 2;
-    }
+        .info form button {
+            grid-column: 2;
+        }
 
     .info input {
         padding: .5em;
@@ -69,7 +68,7 @@ html, body, button {
         font-size: 12px;
     }
 
-button.accordion {
+.accordion > button {
     display: flex;
     width: 100%;
     background-color: #f7f7f7;
@@ -83,11 +82,15 @@ button.accordion {
     transition: background-color 0.2s linear;
 }
 
-button.accordion:hover {
+.accordion > button:hover {
     background-color: #f1f1f1;
 }
 
-.accordion > span {
+.accordion > button:hover > svg {
+    transform: rotate(90deg);
+}
+
+.accordion > button > span {
     flex: 1;
 }
 
@@ -99,11 +102,21 @@ button.accordion:hover {
     transform: rotate(180deg);
 }
 
+.is-open .panel {
+    max-height: none;
+    margin: .5em 0;
+    transition: max-height 0.2s ease-in-out;
+}
+
 .panel {
+    max-height: 0px;
     padding: 0 1em;
-    margin: 1em 0;
     overflow: hidden;
 }
+
+    .panel > * {
+        margin: .5em 0;
+    }
 
 .form-group {
     min-width: 0;
@@ -122,25 +135,25 @@ button, form .error, .address-list {
     font-size: .75em;
 }
 
-.address-list {
+.address-list, .wallet-details {
     margin: -.5em 0;
 }
 
-.address-list > li {
-    margin: .5em 0;
-}
+    .address-list > li, .wallet-details > * {
+        margin: .5em 0;
+    }
 
-.address-list strong {
-    display: block;
-}
+    .address-list strong {
+        display: block;
+    }
 
-.address-list span {
-    font-size: 1rem;
-}
+    .address-list span {
+        font-size: 1rem;
+    }
 
 .trx-result {
-    min-height: 250px;
-    height: 250px;
+    min-height: 200px;
+    height: 200px;
     margin: 1em 0;
     background: #fff;
 }

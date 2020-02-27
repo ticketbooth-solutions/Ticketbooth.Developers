@@ -5,42 +5,61 @@
 
 <div class="container row">
     <div class="info">
-        <button class="accordion is-open">
-            <span>Wallet</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15" /></svg>
-        </button>
-        <div class="panel">
-            <form id="wallet-create-form" method="post" hidden>
-                <div class="form-group">
-                    <label>Name</label>
-                    <input asp-for="@Model.CreateWalletDetails.Name" type="text" maxlength="12" required />
-                </div>
-                <div class="form-group">
-                    <label>Password</label>
-                    <input asp-for="@Model.CreateWalletDetails.Password" type="password" maxlength="24" required />
-                </div>
-                @if (Model.ErrorMessage != null)
-                {
-                    <span class="error">@Model.ErrorMessage</span>
-                }
-                <button type="submit">Create</button>
-            </form>
-            <ul id="wallet-list" hidden>
-            </ul>
-        </div>
-        <button class="accordion is-open">
-            <span>Transaction Lookup</span>
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15" /></svg>
-        </button>
-        <div class="panel column">
-            <div class="form-group">
-                <label for="trx-hash-input">Hash</label>
-                <input id="trx-hash-input" type="text" maxlength="64" />
+        <div class="accordion is-open">
+            <button>
+                <span>Instructions</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15" /></svg>
+            </button>
+            <div class="panel">
+                <ol>
+                    <li>Create a Cirrus testnet wallet.</li>
+                    <li>Fund an address.</li>
+                    <li>Call the API. All <em>POST</em> endpoints will return a transaction hash.</li>
+                    <li>Lookup the transaction hash to view the receipt.</li>
+                </ol>
+                <p>Detailed documentation is available on Ticketbooth <a href="https://developer.ticketbooth.solutions/" target="_blank">developer hub</a>.</p>
             </div>
-            <button type="button" onclick="actions.beginSearchTransaction()">Search</button>
-            <div class="trx-result">
-                <pre id="trx-response"><code>{}</code></pre>
-                <div id="trx-spinner" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+        </div>
+        <div class="accordion">
+            <button>
+                <span>Wallet</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15" /></svg>
+            </button>
+            <div class="panel">
+                <form id="wallet-create-form" method="post" hidden>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input asp-for="@Model.CreateWalletDetails.Name" type="text" maxlength="12" required />
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input asp-for="@Model.CreateWalletDetails.Password" type="password" maxlength="24" required />
+                    </div>
+                    @if (Model.ErrorMessage != null)
+                    {
+                        <span class="error">@Model.ErrorMessage</span>
+                    }
+                    <button type="submit">Create</button>
+                </form>
+                <ul id="wallet-list" hidden>
+                </ul>
+            </div>
+        </div>
+        <div class="accordion">
+            <button>
+                <span>Transaction Lookup</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15" /></svg>
+            </button>
+            <div class="panel column">
+                <div class="form-group">
+                    <label for="trx-hash-input">Hash</label>
+                    <input id="trx-hash-input" type="text" maxlength="64" />
+                </div>
+                <button type="button" onclick="actions.beginSearchTransaction()">Search</button>
+                <div class="trx-result">
+                    <pre id="trx-response"><code>{}</code></pre>
+                    <div id="trx-spinner" class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                </div>
             </div>
         </div>
     </div>
