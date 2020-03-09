@@ -31,16 +31,14 @@ A digital ticket is a QR code that contains JSON data for one or more tickets. T
             "number": 1,
             "letter": "A"
         },
-        "secret": "1vP-b8JwlL0ae4B",
-        "secretKey": "894be55a951fee6c269d91ab77fa2fa7e48c56dd71d1e39c43b5a31ec16f5afe",
-        "secretIV": "54b3a9a6743a775b923c90f3fb86d1c6",
+        "secret": "USfoUzEvP1wf04I",
         "nameKey": "4d38a395594a93e64783744eae669478de1a60be372ed24fdd42a82182eb502d",
         "nameIV": "7d4984f0bda1d5bbb341edf26553e896"
     }
 ]
 ```
 
-Key and IV data must be provided as a serialized hex string. Keys are 32 bytes in size and IVs are 16 bytes in size. The plaintext secret is a randomly generated string with a length of 15. The necessary data is returned in the response body of the call to the endpoint used for reserving a ticket.
+Key and IV data must be provided as a serialized hex string. Keys are 32 bytes in size and IVs are 16 bytes in size. Ticketbooth API randomly generates a string with a length of 15, as the value of the secret, storing the Sha3-224 hash of this value on the blockchain. The necessary data to create a digital ticket, is returned in the response body of the call to the endpoint used for reserving a ticket.
 
 ```http
 POST /api/v1.0/ticketbooth/{address}/ReserveTicket HTTP/1.1
